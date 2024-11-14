@@ -2,7 +2,8 @@ import SwiftUI
 
 struct ContentView: View {
     @State var showExchangeInfo = false
-    
+    @State var leftAmount = ""
+    @State var rightAmount = ""
     
     var body: some View {
         ZStack{
@@ -24,15 +25,14 @@ struct ContentView: View {
                     .foregroundStyle(.white)
                 
 //                Currency conversion section
-                
-                
                 HStack{
-//                    Left conversion section
                     
+//                    Left conversion section
                     VStack {
-//                        Currency
                         
+//                        Currency
                         HStack{
+                            
 //                            Currency image
                             Image(.silverpiece)
                                 .resizable()
@@ -40,13 +40,17 @@ struct ContentView: View {
                                 .frame(height: 33)
                             
 //                            Currency text
-                                Text("Silver Piece")
+                            Text("Silver Piece")
                                 .font(.headline)
                                 .foregroundStyle(.white)
                             
                         }
+//                        .padding(.bottom, -5)
+                        
 //                        Textfield
-                        Text("Textfield")
+                        TextField("Amount", text: $leftAmount)
+                            .textFieldStyle(.roundedBorder)
+                        
                         
                     }
 //                    Equal sign
@@ -56,11 +60,11 @@ struct ContentView: View {
                         .symbolEffect(.pulse)
                     
 //                    Right conversion section
-                    
                     VStack {
-//                        Currency
                         
+//                        Currency
                         HStack{
+                            
 //                            Currency text
                             Text("Gold Piece")
                                 .font(.headline)
@@ -73,11 +77,19 @@ struct ContentView: View {
                                 .frame(height: 33)
                             
                         }
+//                        .padding(.bottom, -5)
+                        
 //                        Textfield
-                        Text("Textfield")
+                        TextField("Amount", text: $rightAmount)
+                            .textFieldStyle(.roundedBorder)
+                            .multilineTextAlignment(.trailing)
                         
                     }
                 }
+                .padding()
+                .background(Color.black.opacity(0.5))
+                .clipShape(.rect(cornerRadius: 15))
+                .padding(.horizontal)
                 
                 Spacer()
                 
