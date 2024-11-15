@@ -19,7 +19,7 @@ struct ContentView: View {
                     .scaledToFit()
                     .frame(height: 200)
                 
-//                Currenci exchange text
+//                Currency exchange text
                 Text("Currency Exchange")
                     .font(.largeTitle)
                     .foregroundStyle(.white)
