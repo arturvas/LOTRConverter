@@ -7,6 +7,9 @@ struct ContentView: View {
     @State var leftAmount = ""
     @State var rightAmount = ""
     
+    @FocusState var leftTyping
+    @FocusState var rightTyping
+    
     @State var leftCurrency = Currency.silverPiece
     @State var rightCurrency = Currency.goldPiece
     
@@ -54,10 +57,15 @@ struct ContentView: View {
                             showSelectCurrency.toggle()
                         }
                         
-//                        Textfield
+//                        Left Textfield
                         TextField("Amount", text: $leftAmount)
                             .textFieldStyle(.roundedBorder)
-                        
+                            .focused($leftTyping)
+                            .onChange(of: leftAmount) {
+                                if leftTyping {
+                                    rightAmount = leftCurrency.convert(leftAmount, to: rightCurrency)
+                                }
+                            }
                         
                     }
 //                    Equal sign
@@ -87,10 +95,16 @@ struct ContentView: View {
                         .onTapGesture {
                         showSelectCurrency.toggle()
                     }
-//                        Textfield
+//                        Right Textfield
                         TextField("Amount", text: $rightAmount)
                             .textFieldStyle(.roundedBorder)
                             .multilineTextAlignment(.trailing)
+                            .focused($rightTyping)
+                            .onChange(of: rightAmount) {
+                                if rightTyping{
+                                    leftAmount = rightCurrency.convert(rightAmount, to: leftCurrency)
+                                }
+                            }
                         
                     }
                 }
