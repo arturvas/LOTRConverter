@@ -11,7 +11,7 @@ struct SelectCurrency: View {
     @Environment(\.dismiss) var dismiss
     
     @Binding var topCurrency: Currency
-    @Binding var bottonCurrency: Currency
+    @Binding var bottomCurrency: Currency
     
     var body: some View {
         ZStack{
@@ -35,7 +35,7 @@ struct SelectCurrency: View {
                     .padding(.top)
                 
 //                Currency icons
-                IconGrid(selectedCurrency: $bottonCurrency)
+                IconGrid(selectedCurrency: $bottomCurrency)
                 
 //                Done button
                 Button("Done"){
@@ -54,7 +54,7 @@ struct SelectCurrency: View {
 //        to test the binding
 //        .onTapGesture {
 //            print("SelectedCurrency topCurrency: \(topCurrency)")
-//            print("SelectedCurrency bottonCurrency: \(bottonCurrency)")
+//            print("SelectedCurrency bottomCurrency: \(bottomCurrency)")
 //        }
     }
 }
@@ -63,5 +63,5 @@ struct SelectCurrency: View {
     @Previewable @State var topCurrency: Currency = .silverPenny
     @Previewable @State var bottonCurerncy: Currency = .goldPenny
     
-    SelectCurrency(topCurrency: $topCurrency, bottonCurrency: $bottonCurerncy)
+    SelectCurrency(topCurrency: $topCurrency, bottomCurrency: $bottonCurerncy)
 }
