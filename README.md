@@ -2,6 +2,15 @@
 
 **LOTRConverter17** é um aplicativo de conversão de moedas fictícias inspirado no universo de fantasia de **O Senhor dos Anéis**.
 
+## Capturas de Tela
+
+### Tela Principal
+<div style="display: flex; gap: 10px;">
+   <img src="https://github.com/arturvas/LOTRConverter/blob/main/LOTRConverter17/Screenshots/mainscreen.png" alt="Tela Principal" width=300" />
+   <img src="https://github.com/arturvas/LOTRConverter/blob/main/LOTRConverter17/Screenshots/selection.png" alt="Selecao de moeda" width="300"/>
+   <img src="https://github.com/arturvas/LOTRConverter/blob/main/LOTRConverter17/Screenshots/info.png" alt="Info" width="300"/>
+</div>
+
 ## Funcionalidades
 
 - **Conversão de Moedas**: Permite converter valores entre diferentes moedas fictícias, como peças de ouro e prata.
